@@ -1,0 +1,1500 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<onload>SetFocus(9000)</onload>
+	<onunload>Weather.Refresh</onunload>
+	<controls>
+		<include>CommonBackground</include>
+		<include>Topbar</include>
+		<control type="label">
+                </control>
+		<control type="group">
+			<!--left>0</left-->
+			<top>150</top>
+			<include>Window_OpenClose_Animation</include>
+			<!--include>SystemLeftPanel</include-->
+			<!--include>SystemRightPanel</include-->
+			<include>NetworkPanelOne</include>
+			<include>dialogeffect</include>
+
+			<!--<control type="group">
+				<visible>!Control.HasFocus(36034)</visible>
+				<ondown>9000</ondown>
+                		<control type="image">
+                        		<left>850</left>
+                        		<!--top>674</top>
+                        		<top>190</top>
+                        		<width>950</width>
+                        		<height>420</height>
+                        		<texture border="40">panel_reflect.png</texture>
+                		</control>
+                		<control type="image">
+                        		<left>850</left>
+                        		<top>190</top>
+                        		<width>950</width>
+                        		<height>420</height>
+                        		<texture border="40">listpanel_back.png</texture>
+                		</control>
+                		<!--control type="image">
+                        		<left>880</left>
+                        		<top>580</top>
+                        		<width>890</width>
+                       	 		<height>1</height>
+                        		<texture border="1">separator2.png</texture>
+                		</control>
+        		</control-->
+
+			<control type="panel" id="9000">
+				<top>490</top>
+				<left>880</left>
+				<width>900</width>
+				<height>90</height>
+				<!--onleft>9001</onleft-->
+				<!--onright>9001</onright-->
+				<onup>36034</onup>
+				<!--ondown>9001</ondown-->
+				<pagecontrol>61</pagecontrol>
+				<scrolltime tween="quadratic">300</scrolltime>
+				<itemlayout height="90" width="900">
+					<!--control type="image">
+						<top>500</top>
+						<width>356</width>
+						<height>60</height>
+						<texture border="1">separator2.png</texture>
+					</control-->
+					<!--control type="image">
+                                                <width>889</width>
+                                                <height>90</height>
+                                                <texture border="4">listselect_fo.png</texture>
+						<visible>Control.HasFocus(9000)</visible>
+                                                <visible>true</visible>
+                                                <include>VisibleFadeEffect</include>
+                                        </control-->
+					<control type="label">
+						<width>886</width>
+						<height>90</height>
+						<font>font15</font>
+						<textoffsetx>20</textoffsetx>
+						<textcolor>white</textcolor>
+						<selectedcolor>selected</selectedcolor>
+						<align>center</align>
+						<!--aligny>center</aligny-->
+						<visible>true</visible>
+						<!--visible>!Control.HasFocus(9000)</visible-->
+						<!--label>Hit ENTER to scan Wireless Networks</label-->
+					</control>
+				</itemlayout>
+				<focusedlayout height="90" width="900">
+					<!--control type="image">
+						<top>500</top>
+						<width>650</width>
+						<height>60</height>
+						<texture border="1">separator2.png</texture>
+					</control-->
+
+ 			                <!--control type="image">
+                			        <left>1000</left>
+                        			<top>600</top>
+                        			<width>655</width>
+                        			<height>95</height>
+                        			<texture border="40">panel_reflect.png</texture>
+                			</control-->
+                			<!--control type="image">
+                        			<left>1000</left>
+                        			<top>600</top>
+                        			<width>655</width>
+                        			<height>95</height>
+                        			<texture border="40">listpanel_back.png</texture>
+                			</control-->
+
+					<control type="image">
+						<width>889</width>
+						<height>90</height>
+						<texture border="4">listselect_fo.png</texture>
+						<!--visible>true</visible-->
+						<visible>Control.HasFocus(9000) + !Control.IsEnabled(36034)</visible>
+						<include>VisibleFadeEffect</include>
+					</control>
+					<control type="label">
+						<width>886</width>
+						<height>90</height>
+						<font>font15</font>
+						<textoffsetx>20</textoffsetx>
+						<textcolor>white</textcolor>
+						<selectedcolor>selected</selectedcolor>
+						<align>center</align>
+						<!--aligny>center</aligny-->
+						<!--visible>true</visible-->
+						<visible>Control.HasFocus(9000) + !Control.IsEnabled(36034)</visible>
+						<label>Hit ENTER to check Network Status</label>
+						<animation effect="fade" start="100" end="70" time="500" tween="sine" easing="inout" condition="!Control.HasFocus(9000)">Conditional</animation>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="36097">
+						<!--label2>$INFO[Skin.String(spincontrol36007)]</label2-->
+						<!--onclick>SetFocus(9001)</onclick-->
+						<!--onclick>-</onclick-->
+						<!--onclick>SetFocus(36034)</onclick-->
+						<!--onclick>SendClick(36036)</onclick-->
+						<!--onclick>Control.SetFocus(9001)</onclick-->
+						<!--onclick>Down</onclick-->
+						<!--onclick>SetFocus(36036)</onclick-->
+						<onclick>SendClick(36036)</onclick>
+						<!--onclick>SendClick(36034)</onclick-->
+						<!--onclick>SendClick(36034)</onclick-->
+						<!--onclick>Control.Move(36005,1)</onclick-->
+						<!--onclick>Control.SetFocus(9001,3)</onclick-->
+						<label>System</label>
+					</item>
+                		</content>
+			</control>
+
+
+			<control type="scrollbar" id="61">
+				<left>65</left>
+				<top>32</top>
+				<width>14</width>
+				<height>720</height>
+				<onleft>61</onleft>
+				<onright>61</onright>
+				<ondown>61</ondown>
+				<onup>9001</onup>
+				<showonepage>false</showonepage>
+				<texturesliderbackground>blue</texturesliderbackground>
+				<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
+				<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
+			</control>
+
+			<control type="image">
+				<description>LOGO</description>
+				<left>82</left>
+				<top>752</top>
+				<width>356</width>
+				<height>120</height>
+				<aspectratio>keep</aspectratio>
+				<!--texture>aeon-nox-logo.png</texture-->
+			</control>
+
+
+			<!--control type="image">
+				<left>522</left>
+				<top>32</top>
+				<width>1316</width>
+				<height>839</height>
+				<aspectratio align="center">scale</aspectratio>
+				<texture background="true">special://skin/backgrounds/default_settings-la.jpg</texture>
+			</control-->
+			<!--control type="image">
+				<left>522</left>
+				<top>32</top>
+				<width>1316</width>
+				<height>839</height>
+				<aspectratio align="center">scale</aspectratio>
+				<texture>black.png</texture>
+				<animation effect="fade" start="45" end="45" time="0" condition="true">conditional</animation>
+			</control-->
+
+
+
+			<!--control type="image">
+				<description>separator image</description>
+				<left>522</left>
+				<top>500</top>
+				<width>1316</width>
+				<height>60</height>
+				<texture border="1">separator2.png</texture>
+			</control-->
+
+			<control type="group" id="9001">
+				<onfocus>SetFocus(36034)</onfocus>
+				<!--onup>36036</onup-->
+				<!--ondown>36034</ondown-->
+                                <left>882</left>
+                                <top>222</top>
+                                <width>1020</width>
+                                <height>750</height>
+				<visible>true</visible>
+                                <orientation>vertical</orientation>
+                                <pagecontrol>61</pagecontrol>
+				<animation type="Hidden" condition="Control.HasFocus(36034)" reversible="true">
+				</animation>
+				<!--control type="image">
+					<top>270</top>
+                                        <width>889</width>
+                                        <height>90</height>
+                                        <texture border="4">listselect_fo.png</texture>
+                                        <visible>Control.IsEnabled(36034) + Control.IsEnabled(9001) + !Control.HasFocus(36034)</visible>
+                                        <visible>true</visible>
+                                        <include>VisibleFadeEffect</include>
+                          	</control>
+                                <control type="label">
+                                        <top>270</top>
+					<width>889</width>
+                                        <height>90</height>
+                                        <font>font15</font>
+                                        <textoffsetx>20</textoffsetx>
+                                        <textcolor>white</textcolor>
+                                        <selectedcolor>selected</selectedcolor>
+                                        <align>center</align>
+                                        <aligny>center</aligny>
+                                        <visible>[[Control.IsEnabled(36034) + Control.IsEnabled(9001)] + Control.HasFocus(9000)] | [Control.HasFocus(36034) + Control.HasFocus(9001)]</visible>
+					<visible>true</visible>
+                                        <label>UP to scan Wireless Networks or ESC to exit</label>
+                                </control-->
+
+				<control type="grouplist" id="36099">
+					<!--onfocus>SendClick(36034)</onfocus-->
+					<!--onclick>SendClick(36034)</onclick-->
+					<itemgap>-1</itemgap>
+					<pagecontrol>61</pagecontrol>
+					<visible>true</visible>
+					<!--visible>Container(9000).HasFocus(36097)</visible-->
+					<control type="label" id="36000">
+						<visible>false</visible>
+						<enable>false</enable>
+						<textcolor>dodgerblue</textcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<!--label>Network</label-->
+						<height>45</height>
+						<width>750</width>
+						<visible>false</visible>
+						<shadowcolor>black</shadowcolor>
+						<font>font13_title</font>
+					</control>
+					<!--control type="button" id="36003">
+						<ondown>36034</ondown>
+						<visible>false</visible>
+						<onfocus>SendClick(36034)</onfocus>
+						<onclick>SendClick(36034)</onclick>
+						<!--onfocus>SetFocus(36034)</onfocus-->	
+						<!--description>hidden button to scroll up the list</description-->
+					<!--/control-->
+					<control type="group" id="36005">
+						<!--ondown>9000</ondown-->
+						<!--onup>36034</onup-->
+						<!--ondown>36034</ondown-->
+						<!--onfocus>SendClick(36034)</onfocus-->
+						<!--onclick>SendClick(36034)</onclick-->
+						<!--visible>!Control.HasFocus(9000)</visible-->
+						<enable>true</enable>
+						<!--control type="image">
+							<top>180</top>
+                                                	<width>889</width>
+                                                	<height>90</height>
+                                                	<texture border="4">listselect_fo.png</texture>
+                                                	<visible>!ontrol.HasFocus(9000) + Control.IsEnabled(36034)</visible>
+                                                	<visible>true</visible>
+                                                	<include>VisibleFadeEffect</include>
+                                        	</control-->
+                                        	<!--control type="label">
+							<top>180</top>
+                                                	<width>886</width>
+                                                	<height>90</height>
+                                                	<font>font15</font>
+                                                	<textoffsetx>20</textoffsetx>
+                                                	<textcolor>white</textcolor>
+                                                	<selectedcolor>selected</selectedcolor>
+                                                	<align>center</align>
+                                                	<aligny>center</aligny>
+                                                	<visible>!Control.HasFocus(9000) + Control.IsEnabled(30034)</visible>
+                                                	<label>Hit ENTER to scan Wireless Networks</label>
+                                        	</control-->
+
+
+
+						<!--control type="image">
+                                                        <width>889</width>
+                                                        <height>90</height>
+                                                        <texture border="4">listselect_fo.png</texture>
+                                                        <visible>!Control.HasFocus(9000) + Control.IsEnabled(36034)</visible>
+                                                        <visible>true</visible>
+                                                        <include>VisibleFadeEffect</include>
+                                                </control-->
+                                                <!--control type="label">
+                                                        <width>889</width>
+                                                        <height>90</height>
+                                                        <font>font15</font>
+                                                        <textoffsetx>20</textoffsetx>
+                                                        <textcolor>white</textcolor>
+                                                        <selectedcolor>selected</selectedcolor>
+                                                        <align>center</align>
+                                                        <aligny>center</aligny>
+                                                        <visible>!Control.HasFocus(9000) + Control.IsEnabled(36034)</visible>
+                                                        <label>Hit ENTER to scan Wireless Networks</label>
+                                                </control-->
+
+
+
+						<width>886</width>
+						<height>90</height>
+						<pagecontrol>61</pagecontrol>
+						<control type="button" id="36034">
+							<pagecontrol>61</pagecontrol>
+							<onup>9001</onup>
+							<!--ondown>900</ondown-->
+        						<texturefocus border="3">listselect_fo.png</texturefocus>
+        						<width>886</width>
+							<left></left>
+							<visible>true</visible>
+        						<disabledcolor>grey3</disabledcolor>
+							<!--visible>!Control.HasFocus(36034) | Control.HasFocus(9000)</visible-->
+        						<!--visible>StringCompare(Skin.String(spincontrol36007),wlan0)</visible-->
+        						<!--visible allowhiddenfocus="true">Control.HasFocus(36034)</visible-->
+							<!--visible allowhiddenfocus="true">!Control.HasFocus(36034) + !Control.IsVisible(36034) + !ControlIsEnabled(36034)</visible!-->
+        						<label>Current Wireless Network (SSID)</label>
+        						<height>90</height>
+        						<pulseonselect>false</pulseonselect>
+        						<enable>false</enable>
+        						<textcolor>grey2</textcolor>
+        						<texturenofocus border="1">separator5.png</texturenofocus>
+        						<focusedcolor>white</focusedcolor>
+        						<font>font15</font>
+							<onfocus>SendClick(36034)</onfocus>
+							<onclick>SetFocus(36036)</onclick>
+						</control>
+
+
+
+						<!--control type="button" id="36033">
+        						<texturefocus border="3">listselect_fo.png</texturefocus>
+        						<width>900</width>
+        						<disabledcolor>grey3</disabledcolor>
+        						<visible>false</visible>
+        						<visible>StringCompare(Skin.String(spincontrol36007),wlan0)</visible>
+        						<label>  •Status</label>
+        						<height>90</height>
+        						<pulseonselect>false</pulseonselect>
+        						<enable>false</enable>
+        						<textcolor>grey2</textcolor>
+        						<texturenofocus border="3">separator5.png</texturenofocus>
+        						<focusedcolor>white</focusedcolor>
+        						<font>font15</font>
+						</control-->
+
+
+
+
+						<control type="button" id="36008">
+							<!--onfocus>SendClick(36034)</onfocus-->
+							<!--onclick>SendClick(36034)</onclick-->
+							<!--onup>36034</onup-->
+							<!--onup>36003</onup-->
+							<texturefocus border="3">listselect_fo.png</texturefocus>
+							<!--ondown>36004</ondown-->
+							<!--ondown>36034</ondown-->
+							<width>850</width>
+							<disabledcolor>white</disabledcolor>
+							<visible>false</visible>
+							<enable>false</enable>
+							<!--visible>Control.HasFocus(36007) | Control.HasFocus(36006)</visible-->
+							<label>Select interface to configure</label>
+							<height>90</height>
+							<posx>0</posx>
+							<pulseonselect>false</pulseonselect>
+							<enable>false</enable>
+							<textcolor>grey2</textcolor>
+							<texturenofocus>MenuItemFO.png</texturenofocus>
+							<posy>0</posy>
+							<focusedcolor>white</focusedcolor>
+							<font>font15</font>
+						</control>
+
+
+
+						<control type="button" id="36009">
+							<!--onclick>SendClick(36034)</onclick-->
+							<!--onfocus>SendClick(36034)</onfocus-->
+							<!--onup>36034</onup-->
+							<texturefocus border="3">listselect_fo.png</texturefocus>
+							<!--ondown>36004</ondown-->
+							<width>880</width>
+							<disabledcolor>grey2</disabledcolor>
+							<visible>false</visible>
+							<!--visible>![Control.HasFocus(36007) | Control.HasFocus(36006)] + Control.IsEnabled(36007)</visible-->
+							<label>Select interface to configure</label>
+							<height>90</height>
+							<posx>0</posx>
+							<pulseonselect>false</pulseonselect>
+							<enable>false</enable>
+							<textcolor>grey2</textcolor>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
+							<posy>0</posy>
+							<focusedcolor>white</focusedcolor>
+							<font>font15</font>
+						</control>
+
+						<control type="button" id="36010">
+							<!--onfocus>SendClick(36034)</onfocus-->
+							<!--onclick>SendClick(36034)</onclick-->
+							<!--onup>36003</onup-->
+							<texturefocus border="3">listselect_fo.png</texturefocus>
+							<!--ondown>36004</ondown-->
+							<width>900</width>
+							<disabledcolor>grey3</disabledcolor>
+							<visible>false</visible>
+							<enable>false</enable>
+							<!--visible>!Control.IsEnabled(36006) + control.IsVisible(36006)</visible-->
+							<label>Select interface to configure</label>
+							<height>90</height>
+							<posx>0</posx>
+							<pulseonselect>false</pulseonselect>
+							<enable>false</enable>
+							<textcolor>grey2</textcolor>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
+							<posy>0</posy>
+							<focusedcolor>white</focusedcolor>
+							<font>font15</font>
+						</control>
+
+
+						<!--control type="textbox" id="62">
+                                                	<description>description area</description>
+                                                	<left>15</left>
+                                                	<top>365</top>
+                                                	<width>850</width>
+                                                	<height>400</height>
+                                                	<font>font12</font>
+                                                	<align>left</align>
+							<textcolor>dodgerblue</textcolor>
+							<visible>Control.HasFocus(36034) + Control.IsEnabled(36034)</visible>
+                                                	<visible>Control.IsEnabled(36034) + !Control.HasFocus(36003) + Control.HasFocus(36034)</visible>
+                                                	<autoscroll time="3000" delay="4000" repeat="5000">true</autoscroll>
+                                                	<animation effect="fade" start="0" end="100" time="300" tween="sine" easing="inout">Visible</animation>
+                                                	<animation effect="fade" start="100" end="0" time="0" tween="sine" easing="inout">Hidden</animation>
+                                                	<label>Hit ENTER to scan for available networks or ESC to return to the main menu</label>
+        					</control-->
+						<!--control type="textbox" id="62">
+                                                	<description>description area</description>
+                                                	<left>15</left>
+                                                	<top>395</top>
+                                                	<width>850</width>
+                                                	<height>60</height>
+                                                	<font>font13</font>
+                                                	<align>center</align>
+                                                	<textcolor>dodgerblue</textcolor>
+							<visible>false</visible>
+                                                	<visible>Control.HasFocus(36034)</visible>
+                                                	<autoscroll time="3000" delay="4000" repeat="5000">true</autoscroll>
+                                                	<animation effect="fade" start="0" end="100" time="300" tween="sine" easing="inout">Visible</animation>
+                                                	<animation effect="fade" start="100" end="0" time="0" tween="sine" easing="inout">Hidden</animation>
+                                                	<label>Hit ENTER to scan for a wireless network, or ESC to exit</label>
+        					</control-->
+
+						 <!--control type="textbox" id="62">
+                                                        <description>description area</description>
+                                                        <left>15</left>
+                                                        <top>370</top>
+                                                        <width>850</width>
+                                                        <height>400</height>
+                                                        <font>font12</font>
+                                                        <align>left</align>
+                                                        <textcolor>dodgerblue</textcolor>
+                                                        <visible>Control.HasFocus(36034) + Control.IsEnabled(36034)</visible>
+                                                        <autoscroll time="3000" delay="4000" repeat="5000">true</autoscroll>
+                                                        <animation effect="fade" start="0" end="100" time="300" tween="sine" easing="inout">Visible</animation>
+                                                        <animation effect="fade" start="100" end="0" time="0" tween="sine" easing="inout">Hidden</animation>
+                                                        <label>Hit ESC for the main menu or ENTER to scan for an available wireless network</label>
+                                                </control-->
+
+						<control type="textbox" id="62">
+                                                        <description>description area</description>
+                                                        <width>850</width>
+                                                        <height>60</height>
+                                                        <font>font13</font>
+                                                        <align>center</align>
+                                                        <textcolor>dodgerblue</textcolor>
+							<!--visible>true</visible-->
+                                                        <visible>Control.HasFocus(36036)</visible>
+                                                        <autoscroll time="3000" delay="4000" repeat="5000">true</autoscroll>
+                                                        <animation effect="fade" start="0" end="100" time="300" tween="sine" easing="inout">Visible</animation>
+                                                        <animation effect="fade" start="100" end="0" time="0" tween="sine" easing="inout">Hidden</animation>
+                                                        <label>LA This is a test</label>
+                                                </control>
+
+
+						<control type="button" id="36006">
+							<!--onup>36003</onup-->
+							<visible>false</visible>
+							<texturefocus border="3">listselect_fo.png</texturefocus>
+							<posx>0</posx>
+							<width>850</width>
+							<disabledcolor>grey3</disabledcolor>
+							<height>90</height>
+							<pulseonselect>false</pulseonselect>
+							<enable>false</enable>
+							<textcolor>grey2</textcolor>
+							<texturenofocus border="1">separator5.png</texturenofocus>
+							<posy>0</posy>
+							<focusedcolor>white</focusedcolor>
+							<!--onleft>9000</onleft-->
+							<font>font15</font>
+							<!--onright>36007</onright-->
+							<!--ondown>36004</ondown-->
+						</control>
+						<control type="button" id="36007">
+							<!--onup>36003</onup-->
+							<visible>false</visible>
+							<texturefocus border="3">listselect_fo.png</texturefocus>
+							<posx>0</posx>
+							<width>850</width>
+							<disabledcolor>grey3</disabledcolor>
+							<height>90</height>
+							<pulseonselect>false</pulseonselect>
+							<enable>false</enable>
+							<textcolor>grey2</textcolor>
+							<texturenofocus border="1">separator5.png</texturenofocus>
+							<posy>0</posy>
+							<focusedcolor>white</focusedcolor>
+							<!--onleft>36006</onleft-->
+							<font>font15</font>
+							<!--onright>9000</onright-->
+							<!--ondown>36004</ondown-->
+						</control>
+					</control>
+
+
+
+
+					<!--control type="button" id="36004">
+						<onfocus>SendClick(36034)</onfocus>
+						<!--visible>false</visible-->
+						<!--description>hidden button to scroll down the list</description>
+					</control-->
+
+
+					<!--control type="button" id="36013">
+						<texturefocus border="1">listselect_fo.png</texturefocus>
+						<width>900</width>
+						<disabledcolor>grey3</disabledcolor>
+						<visible>true</visible>
+						<visible>StringCompare(Skin.String(spincontrol36007),eth0)</visible>
+						<label>  •Ethernet Status</label>
+						<height>90</height>
+						<pulseonselect>false</pulseonselect>
+						<enable>false</enable>
+						<textcolor>grey2</textcolor>
+						<texturenofocus border="1">separator5.png</texturenofocus>
+						<focusedcolor>white</focusedcolor>
+						<font>font15</font>
+					</control-->
+					<!--control type="button" id="36015">
+						<visible>false</visible>
+						<description>hidden button to scroll up the list</description>
+					</control-->
+					<control type="group" id="36017">
+						<width>850</width>
+						<visible>false</visible>
+						<!--visible>StringCompare(Skin.String(spincontrol36007),eth0)</visible-->
+						<height>90</height>
+						<control type="button" id="36020">
+							<!--onup>36015</onup-->
+							<texturefocus border="3">listselect_fo.png</texturefocus>
+							<!--ondown>36016</ondown-->
+							<width>850</width>
+							<disabledcolor>white</disabledcolor>
+							<!--visible>Control.HasFocus(36019) | Control.HasFocus(36018)</visible-->
+							<visible>false</visible>
+							<label>  •Type</label>
+							<height>90</height>
+							<posx>0</posx>
+							<pulseonselect>false</pulseonselect>
+							<enable>false</enable>
+							<textcolor>grey2</textcolor>
+							<texturenofocus border="1">separator5.png</texturenofocus>
+							<posy>0</posy>
+							<focusedcolor>white</focusedcolor>
+							<font>font15</font>
+					</control>
+					<control type="button" id="36021">
+						<!--onup>36015</onup-->
+						<texturefocus border="3">listselect_fo.png</texturefocus>
+						<ondown>36016</ondown>
+						<width>900</width>
+						<disabledcolor>grey2</disabledcolor>
+						<visible>false</visible>
+						<!--visible>![Control.HasFocus(36019) | Control.HasFocus(36018)] + Control.IsEnabled(36019)</visible-->
+						<label>  •Type</label>
+						<height>90</height>
+						<posx>0</posx>
+						<pulseonselect>false</pulseonselect>
+						<enable>false</enable>
+						<textcolor>grey2</textcolor>
+						<texturenofocus border="1">separator5.png</texturenofocus>
+						<posy>0</posy>
+						<focusedcolor>white</focusedcolor>
+						<font>font15</font>
+					</control>
+					<control type="button" id="36022">
+						<onup>36015</onup>
+						<texturefocus border="3">listselect_fo.png</texturefocus>
+						<ondown>36016</ondown>
+						<width>900</width>
+						<disabledcolor>grey3</disabledcolor>
+						<visible>false</visible>
+						<!--visible>!Control.IsEnabled(36018) + control.IsVisible(36018)</visible-->
+						<label>  •Type</label>
+						<height>90</height>
+						<posx>0</posx>
+						<pulseonselect>false</pulseonselect>
+						<enable>false</enable>
+						<textcolor>grey2</textcolor>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<posy>0</posy>
+						<focusedcolor>white</focusedcolor>
+						<font>font15</font>
+					</control>
+					<control type="button" id="36018">
+						<onup>36015</onup>
+						<texturefocus border="3">listselect_fo.png</texturefocus>
+						<posx>0</posx>
+						<width>900</width>
+						<disabledcolor>grey3</disabledcolor>
+						<height>90</height>
+						<pulseonselect>false</pulseonselect>
+						<enable>false</enable>
+						<textcolor>grey2</textcolor>
+						<texturenofocus border="1">separator5.png</texturenofocus>
+						<posy>0</posy>
+						<focusedcolor>white</focusedcolor>
+						<onleft>9000</onleft>
+						<font>font15</font>
+						<onright>36019</onright>
+						<ondown>36016</ondown>
+					</control>
+					<control type="button" id="36019">
+						<onup>36015</onup>
+						<texturefocus border="3">listselect_fo.png</texturefocus>
+						<posx>0</posx>
+						<width>850</width>
+						<disabledcolor>grey3</disabledcolor>
+						<height>90</height>
+						<pulseonselect>false</pulseonselect>
+						<enable>false</enable>
+						<textcolor>grey2</textcolor>
+						<texturenofocus border="1">separator5.png</texturenofocus>
+						<posy>0</posy>
+						<focusedcolor>white</focusedcolor>
+						<onleft>36018</onleft>
+						<font>font15</font>
+						<onright>9000</onright>
+						<ondown>36016</ondown>
+					</control>
+				</control>
+
+
+				<!--control type="button" id="36016">
+					<visible>false</visible>
+					<description>hidden button to scroll down the list</description>
+				</control-->
+				<control type="button" id="36026">
+					<texturefocus border="1">listselect_fo.png</texturefocus>
+					<width>850</width>
+					<disabledcolor>grey3</disabledcolor>
+					<visible>false</visible>
+					<visible>StringCompare(Skin.String(spincontrol36019),Static)</visible>
+					<visible>StringCompare(Skin.String(spincontrol36007),eth0)</visible>
+					<label>    •IP Address</label>
+					<height>45</height>
+					<pulseonselect>false</pulseonselect>
+					<enable>false</enable>
+					<textcolor>grey2</textcolor>
+					<texturenofocus>MenuItemNF.png</texturenofocus>
+					<focusedcolor>white</focusedcolor>
+					<font>font13</font>
+				</control>
+				<control type="button" id="36027">
+			<texturefocus border="3">listselect_fo.png</texturefocus>
+			<width>850</width>
+			<disabledcolor>grey3</disabledcolor>
+			<visible>StringCompare(Skin.String(spincontrol36019),Static)</visible>
+			<visible>StringCompare(Skin.String(spincontrol36007),eth0)</visible>
+			<label>    •Netmask</label>
+			<height>45</height>
+			<pulseonselect>false</pulseonselect>
+			<enable>false</enable>
+			<textcolor>grey2</textcolor>
+			<texturenofocus>MenuItemNF.png</texturenofocus>
+			<focusedcolor>white</focusedcolor>
+			<font>font13</font>
+		</control>
+		<control type="button" id="36028">
+			<texturefocus border="3">listselect_fo.png</texturefocus>
+			<width>900</width>
+			<disabledcolor>grey3</disabledcolor>
+			<visible>StringCompare(Skin.String(spincontrol36019),Static)</visible>
+			<visible>StringCompare(Skin.String(spincontrol36007),eth0)</visible>
+			<label>    •Gateway</label>
+			<height>45</height>
+			<pulseonselect>false</pulseonselect>
+			<enable>false</enable>
+			<textcolor>grey2</textcolor>
+			<texturenofocus>MenuItemNF.png</texturenofocus>
+			<focusedcolor>white</focusedcolor>
+			<font>font13</font>
+		</control>
+		<control type="button" id="36029">
+			<texturefocus border="3">listselect_fo.png</texturefocus>
+			<width>900</width>
+<disabledcolor>grey3</disabledcolor>
+<visible>StringCompare(Skin.String(spincontrol36019),Static)</visible>
+<visible>StringCompare(Skin.String(spincontrol36007),eth0)</visible>
+<label>    •Nameserver 1</label>
+<height>45</height>
+<pulseonselect>false</pulseonselect>
+<enable>false</enable>
+<textcolor>grey2</textcolor>
+<texturenofocus>MenuItemNF.png</texturenofocus>
+<focusedcolor>white</focusedcolor>
+<font>font13</font>
+</control>
+<control type="button" id="36030">
+<texturefocus border="3">listselect_fo.png</texturefocus>
+<width>900</width>
+<disabledcolor>grey3</disabledcolor>
+<visible>StringCompare(Skin.String(spincontrol36019),Static)</visible>
+<visible>StringCompare(Skin.String(spincontrol36007),eth0)</visible>
+<label>    •Nameserver 2</label>
+<height>45</height>
+<pulseonselect>false</pulseonselect>
+<enable>false</enable>
+<textcolor>grey2</textcolor>
+<texturenofocus>MenuItemNF.png</texturenofocus>
+<focusedcolor>white</focusedcolor>
+<font>font13</font>
+</control>
+
+
+<!--control type="button" id="36034">
+        <texturefocus border="3">listselect_fo.png</texturefocus>
+        <width>900</width>
+        <disabledcolor>grey3</disabledcolor>
+        <visible>StringCompare(Skin.String(spincontrol36007),wlan0)</visible>
+        <visible>false</visible>
+        <label>  •Network (SSID)</label>
+        <height>90</height>
+        <pulseonselect>false</pulseonselect>
+        <enable>false</enable>
+        <textcolor>grey2</textcolor>
+        <texturenofocus border="1">separator5.png</texturenofocus>
+        <focusedcolor>white</focusedcolor>
+        <font>font15</font>
+</control-->
+
+
+		<control type="button" id="36033">
+			<texturefocus border="3"></texturefocus>
+			<width>886</width>
+			<right>10</right>
+			<disabledcolor>grey3</disabledcolor>
+			<!--visible>!Control.HasFocus(36034)</visible-->
+			<!--visible>true</visible-->
+			<!--visible>StringCompare(Skin.String(spincontrol36007),wlan0)</visible-->
+			<label>  • Wireless Status</label>
+			<height>90</height>
+			<pulseonselect>false</pulseonselect>
+			<enable>false</enable>
+			<textcolor>grey2</textcolor>
+			<texturenofocus border="3">separator5.png</texturenofocus>
+			<focusedcolor>white</focusedcolor>
+			<font>font15</font>
+		</control>
+		<control type="button" id="36013">
+                		<texturefocus border="1"></texturefocus>
+                		<width>886</width>
+				<left>20</left>
+                		<disabledcolor>grey3</disabledcolor>
+				<!--visible>!Control.HasFocus(36034)</visible-->
+                		<visible>true</visible>
+                		<!--visible>StringCompare(Skin.String(spincontrol36007),eth0)</visible-->
+                		<label>  • Ethernet Status</label>
+                		<height>90</height>
+                		<pulseonselect>false</pulseonselect>
+                		<enable>false</enable>
+                		<textcolor>grey2</textcolor>
+                		<texturenofocus border="1">separator5.png</texturenofocus>
+                		<focusedcolor>white</focusedcolor>
+                		<font>font15</font>
+        	</control>
+		<control type="button" id="36036">
+			<onup>36034</onup>
+			<!--visible>true</visible-->
+			<visible>Control.IsEnabled(36034) + !Control.HasFocus(36034) + Control.IsEnabled(36036)</visible>
+			<!--pagecontrol>61</pagecontrol-->
+                        <texturenofocus border="3">listselect_fo.png</texturenofocus>
+                        <width>886</width>
+                        <left></left>
+                        <visible>true</visible>
+                        <disabledcolor>grey3</disabledcolor>
+			<align>center</align>
+                                                        <!--visible>!Control.HasFocus(36034) | Control.HasFocus(9000)</visible-->
+                                                        <!--visible>StringCompare(Skin.String(spincontrol36007),wlan0)</visible-->
+                                                        <!--visible allowhiddenfocus="true">Control.HasFocus(36034)</visible-->
+                                                        <label>UP to scan Wireless Networks or ESC to exit</label>
+                                                        <height>90</height>
+                        <pulseonselect>false</pulseonselect>
+                        <enable>true</enable>
+                        <textcolor>white</textcolor>
+                        <texturenofocus border="1">separator5.png</texturenofocus>
+                        <focusedcolor>white</focusedcolor>
+                        <font>font15</font>
+                        <!--onfocus>SetFocus(36034)</onfocus-->
+                	<onclick>SendClick(36034)</onclick>
+		</control>
+
+
+
+
+<control type="group" id="36038">
+	<width>880</width>
+	<visible>StringCompare(Skin.String(spincontrol36007),wlan0)</visible>
+	<height>90</height>
+	<control type="button" id="36041">
+		<onup>36036</onup>
+		<texturefocus border="3">listselect_fo.png</texturefocus>
+		<ondown>36037</ondown>
+		<width>900</width>
+		<disabledcolor>white</disabledcolor>
+		<!--visible>Control.HasFocus(36040) | Control.HasFocus(36039)</visible-->
+		<visible>false</visible>
+		<label>  •Type</label>
+		<height>90</height>
+		<posx>0</posx>
+		<pulseonselect>false</pulseonselect>
+		<enable>false</enable>
+		<textcolor>grey2</textcolor>
+		<texturenofocus border="1">separator5.png</texturenofocus>
+		<posy>0</posy>
+		<focusedcolor>white</focusedcolor>
+		<font>font15</font>
+	</control>
+<control type="button" id="36042">
+<onup>36036</onup>
+<texturefocus border="3">listselect_fo.png</texturefocus>
+<ondown>36037</ondown>
+<width>900</width>
+<disabledcolor>grey2</disabledcolor>
+<visible>false</visible>
+<!--visible>![Control.HasFocus(36040) | Control.HasFocus(36039)] + Control.IsEnabled(36040)</visible-->
+<label>  •Type</label>
+<height>90</height>
+<posx>0</posx>
+<pulseonselect>false</pulseonselect>
+<enable>false</enable>
+<textcolor>grey2</textcolor>
+<texturenofocus border="1">separator5.png</texturenofocus>
+<posy>0</posy>
+<focusedcolor>white</focusedcolor>
+<font>font15</font>
+</control>
+<control type="button" id="36043">
+<onup>36036</onup>
+<texturefocus border="3">listselect_fo.png</texturefocus>
+<ondown>36037</ondown>
+<width>900</width>
+<disabledcolor>grey3</disabledcolor>
+<visible>false</visible>
+<!--visible>!Control.IsEnabled(36039) + control.IsVisible(36039)</visible-->
+<label>  •Type</label>
+<height>90</height>
+<posx>0</posx>
+<pulseonselect>false</pulseonselect>
+<enable>false</enable>
+<textcolor>grey2</textcolor>
+<texturenofocus border="1">separator5.png</texturenofocus>
+<posy>0</posy>
+<focusedcolor>white</focusedcolor>
+<font>font15</font>
+</control>
+<control type="button" id="36039">
+<onup>36036</onup>
+<texturefocus border="3">listselect_fo.png</texturefocus>
+<posx>0</posx>
+<width>900</width>
+<disabledcolor>grey3</disabledcolor>
+<height>90</height>
+<pulseonselect>false</pulseonselect>
+<enable>false</enable>
+<textcolor>grey2</textcolor>
+<texturenofocus>scroll-down-2.png</texturenofocus>
+<posy>0</posy>
+<focusedcolor>white</focusedcolor>
+<onleft>9000</onleft>
+<font>font15</font>
+<onright>36040</onright>
+<ondown>36037</ondown>
+</control>
+<control type="button" id="36040">
+<onup>36036</onup>
+<texturefocus border="3">listselect_fo.png</texturefocus>
+<posx>0</posx>
+<width>900</width>
+<disabledcolor>grey3</disabledcolor>
+<height>90</height>
+<pulseonselect>false</pulseonselect>
+<enable>false</enable>
+<textcolor>grey2</textcolor>
+<texturenofocus>scroll-up-2.png</texturenofocus>
+<posy>0</posy>
+<focusedcolor>white</focusedcolor>
+<onleft>36039</onleft>
+<font>font15</font>
+<onright>9000</onright>
+<ondown>36037</ondown>
+</control>
+</control>
+<control type="button" id="36037">
+<visible>false</visible>
+<description>hidden button to scroll down the list</description>
+</control>
+<control type="button" id="36047">
+<texturefocus border="3">listselect_fo.png</texturefocus>
+<width>875</width>
+<disabledcolor>grey3</disabledcolor>
+<visible>StringCompare(Skin.String(spincontrol36040),Static)</visible>
+<visible>StringCompare(Skin.String(spincontrol36007),wlan0)</visible>
+<label>    •IP Address</label>
+<height>45</height>
+<pulseonselect>false</pulseonselect>
+<enable>false</enable>
+<textcolor>grey2</textcolor>
+<texturenofocus>MenuItemNF.png</texturenofocus>
+<focusedcolor>white</focusedcolor>
+<font>font13</font>
+</control>
+<control type="button" id="36048">
+<texturefocus border="1">listselect_fo.png</texturefocus>
+<width>900</width>
+<disabledcolor>grey3</disabledcolor>
+<visible>StringCompare(Skin.String(spincontrol36040),Static)</visible>
+<visible>StringCompare(Skin.String(spincontrol36007),wlan0)</visible>
+<label>    •Netmask</label>
+<height>45</height>
+<pulseonselect>false</pulseonselect>
+<enable>false</enable>
+<textcolor>grey2</textcolor>
+<texturenofocus>MenuItemNF.png</texturenofocus>
+<focusedcolor>white</focusedcolor>
+<font>font13</font>
+</control>
+<control type="button" id="36049">
+<texturefocus border="3">listselect_fo.png</texturefocus>
+<width>900</width>
+<disabledcolor>grey3</disabledcolor>
+<visible>StringCompare(Skin.String(spincontrol36040),Static)</visible>
+<visible>StringCompare(Skin.String(spincontrol36007),wlan0)</visible>
+<label>    •Gateway</label>
+<height>45</height>
+<pulseonselect>false</pulseonselect>
+<enable>false</enable>
+<textcolor>grey2</textcolor>
+<texturenofocus>MenuItemNF.png</texturenofocus>
+<focusedcolor>white</focusedcolor>
+<font>font13</font>
+</control>
+<control type="button" id="36050">
+<texturefocus border="3">listselect_fo.png</texturefocus>
+<width>900</width>
+<disabledcolor>grey3</disabledcolor>
+<visible>StringCompare(Skin.String(spincontrol36040),Static)</visible>
+<visible>StringCompare(Skin.String(spincontrol36007),wlan0)</visible>
+<label>    •Nameserver 1</label>
+<height>45</height>
+<pulseonselect>false</pulseonselect>
+<enable>false</enable>
+<textcolor>grey2</textcolor>
+<texturenofocus>MenuItemNF.png</texturenofocus>
+<focusedcolor>white</focusedcolor>
+<font>font13</font>
+</control>
+<control type="button" id="36051">
+<texturefocus border="3">listselect_fo.png</texturefocus>
+<width>900</width>
+<disabledcolor>grey3</disabledcolor>
+<visible>false</visible>
+<!--visible>StringCompare(Skin.String(spincontrol36040),Static)</visible-->
+<!--visible>StringCompare(Skin.String(spincontrol36007),wlan0)</visible-->
+<label>    •Nameserver 2</label>
+<height>45</height>
+<pulseonselect>false</pulseonselect>
+<enable>false</enable>
+<textcolor>grey2</textcolor>
+<texturenofocus>MenuItemNF.png</texturenofocus>
+<focusedcolor>white</focusedcolor>
+<font>font13</font>
+</control>
+
+
+
+
+
+
+<!---XXX  end of network settings XXX-->
+
+
+
+
+
+
+
+
+<control type="label" id="36063">
+<textcolor>blue</textcolor>
+<width>750</width>
+<align>left</align>
+<aligny>center</aligny>
+<label>System</label>
+<height>45</height>
+<visible>Stringcompare(Window.Property(advancedmode),1)</visible>
+<shadowcolor>black</shadowcolor>
+<font>font15_title</font>
+</control>
+<control type="button" id="36064">
+<texturefocus>MenuItemFO.png</texturefocus>
+<width>750</width>
+<disabledcolor>grey3</disabledcolor>
+<visible>Stringcompare(Window.Property(advancedmode),1)</visible>
+<label>Hostname</label>
+<height>90</height>
+<pulseonselect>false</pulseonselect>
+<enable>false</enable>
+<textcolor>grey2</textcolor>
+<texturenofocus>MenuItemNF.png</texturenofocus>
+<focusedcolor>white</focusedcolor>
+<font>font15</font>
+</control>
+<control type="button" id="36092">
+<texturefocus>MenuItemFO.png</texturefocus>
+<width>750</width>
+<disabledcolor>grey3</disabledcolor>
+<visible>Stringcompare(Window.Property(advancedmode),1)</visible>
+<label>Timezone</label>
+<height>90</height>
+<pulseonselect>false</pulseonselect>
+<enable>false</enable>
+<textcolor>grey2</textcolor>
+<texturenofocus>MenuItemNF.png</texturenofocus>
+<focusedcolor>white</focusedcolor>
+<font>font15</font>
+</control>
+<control type="button" id="36066">
+<visible>false</visible>
+<description>hidden button to scroll up the list</description>
+</control>
+<control type="group" id="36068">
+<width>750</width>
+<visible>Stringcompare(Window.Property(advancedmode),1)</visible>
+<height>90</height>
+<control type="button" id="36071">
+<onup>36066</onup>
+<texturefocus>MenuItemFO.png</texturefocus>
+<ondown>36067</ondown>
+<width>750</width>
+<disabledcolor>white</disabledcolor>
+<visible>Control.HasFocus(36070) | Control.HasFocus(36069)</visible>
+<label>Kernel</label>
+<height>90</height>
+<posx>0</posx>
+<pulseonselect>false</pulseonselect>
+<enable>false</enable>
+<textcolor>grey2</textcolor>
+<texturenofocus>MenuItemFO.png</texturenofocus>
+<posy>0</posy>
+<focusedcolor>white</focusedcolor>
+<font>font15</font>
+</control>
+<control type="button" id="36072">
+<onup>36066</onup>
+<texturefocus>MenuItemFO.png</texturefocus>
+<ondown>36067</ondown>
+<width>750</width>
+<disabledcolor>grey2</disabledcolor>
+<visible>![Control.HasFocus(36070) | Control.HasFocus(36069)] + Control.IsEnabled(36070)</visible>
+<label>Kernel</label>
+<height>40</height>
+<posx>0</posx>
+<pulseonselect>false</pulseonselect>
+<enable>false</enable>
+<textcolor>grey2</textcolor>
+<texturenofocus>MenuItemNF.png</texturenofocus>
+<posy>0</posy>
+<focusedcolor>white</focusedcolor>
+<font>font15</font>
+</control>
+<control type="button" id="36073">
+<onup>36066</onup>
+<texturefocus>MenuItemFO.png</texturefocus>
+<ondown>36067</ondown>
+<width>750</width>
+<disabledcolor>grey3</disabledcolor>
+<visible>!Control.IsEnabled(36069) + control.IsVisible(36069)</visible>
+<label>Kernel</label>
+<height>90</height>
+<posx>0</posx>
+<pulseonselect>false</pulseonselect>
+<enable>false</enable>
+<textcolor>grey2</textcolor>
+<texturenofocus>MenuItemNF.png</texturenofocus>
+<posy>0</posy>
+<focusedcolor>white</focusedcolor>
+<font>font15</font>
+</control>
+<control type="button" id="36069">
+<onup>36066</onup>
+<texturefocus>scroll-down-focus-2.png</texturefocus>
+<posx>680</posx>
+<width>33</width>
+<disabledcolor>grey3</disabledcolor>
+<height>22</height>
+<pulseonselect>false</pulseonselect>
+<enable>false</enable>
+<textcolor>grey2</textcolor>
+<texturenofocus>scroll-down-2.png</texturenofocus>
+<posy>9</posy>
+<focusedcolor>white</focusedcolor>
+<onleft>9000</onleft>
+<font>font13</font>
+<onright>36070</onright>
+<ondown>36067</ondown>
+</control>
+<control type="button" id="36070">
+<onup>36066</onup>
+<texturefocus>scroll-up-focus-2.png</texturefocus>
+<posx>713</posx>
+<width>33</width>
+<disabledcolor>grey3</disabledcolor>
+<height>22</height>
+<pulseonselect>false</pulseonselect>
+<enable>false</enable>
+<textcolor>grey2</textcolor>
+<texturenofocus>scroll-up-2.png</texturenofocus>
+<posy>9</posy>
+<focusedcolor>white</focusedcolor>
+<onleft>36069</onleft>
+<font>font13</font>
+<onright>9000</onright>
+<ondown>36067</ondown>
+</control>
+</control>
+<control type="button" id="36067">
+<visible>false</visible>
+<description>hidden button to scroll down the list</description>
+</control>
+<control type="button" id="36076">
+<visible>false</visible>
+<description>hidden button to scroll up the list</description>
+</control>
+<control type="group" id="36078">
+<width>750</width>
+<visible>Stringcompare(Window.Property(advancedmode),1)</visible>
+<height>90</height>
+<control type="button" id="36081">
+<onup>36076</onup>
+<texturefocus>MenuItemFO.png</texturefocus>
+<ondown>36077</ondown>
+<width>750</width>
+<disabledcolor>white</disabledcolor>
+<visible>Control.HasFocus(36080) | Control.HasFocus(36079)</visible>
+<label>Overclocking</label>
+<height>90</height>
+<posx>0</posx>
+<pulseonselect>false</pulseonselect>
+<enable>false</enable>
+<textcolor>grey2</textcolor>
+<texturenofocus>MenuItemFO.png</texturenofocus>
+<posy>0</posy>
+<focusedcolor>white</focusedcolor>
+<font>font15</font>
+</control>
+<control type="button" id="36082">
+<onup>36076</onup>
+<texturefocus>MenuItemFO.png</texturefocus>
+<ondown>36077</ondown>
+<width>750</width>
+<disabledcolor>grey2</disabledcolor>
+<visible>![Control.HasFocus(36080) | Control.HasFocus(36079)] + Control.IsEnabled(36080)</visible>
+<label>Overclocking</label>
+<height>40</height>
+<posx>0</posx>
+<pulseonselect>false</pulseonselect>
+<enable>false</enable>
+<textcolor>grey2</textcolor>
+<texturenofocus>MenuItemNF.png</texturenofocus>
+<posy>0</posy>
+<focusedcolor>white</focusedcolor>
+<font>font15</font>
+</control>
+<control type="button" id="36083">
+<onup>36076</onup>
+<texturefocus>MenuItemFO.png</texturefocus>
+<ondown>36077</ondown>
+<width>750</width>
+<disabledcolor>grey3</disabledcolor>
+<visible>!Control.IsEnabled(36079) + control.IsVisible(36079)</visible>
+<label>Overclocking</label>
+<height>40</height>
+<posx>0</posx>
+<pulseonselect>false</pulseonselect>
+<enable>false</enable>
+<textcolor>grey2</textcolor>
+<texturenofocus>MenuItemNF.png</texturenofocus>
+<posy>0</posy>
+<focusedcolor>white</focusedcolor>
+<font>font15</font>
+</control>
+<control type="button" id="36079">
+<onup>36076</onup>
+<texturefocus>scroll-down-focus-2.png</texturefocus>
+<posx>680</posx>
+<width>33</width>
+<disabledcolor>grey3</disabledcolor>
+<height>22</height>
+<pulseonselect>false</pulseonselect>
+<enable>false</enable>
+<textcolor>grey2</textcolor>
+<texturenofocus>scroll-down-2.png</texturenofocus>
+<posy>9</posy>
+<focusedcolor>white</focusedcolor>
+<onleft>9000</onleft>
+<font>font15</font>
+<onright>36080</onright>
+<ondown>36077</ondown>
+</control>
+<control type="button" id="36080">
+<onup>36076</onup>
+<texturefocus>scroll-up-focus-2.png</texturefocus>
+<posx>713</posx>
+<width>33</width>
+<disabledcolor>grey3</disabledcolor>
+<height>22</height>
+<pulseonselect>false</pulseonselect>
+<enable>false</enable>
+<textcolor>grey2</textcolor>
+<texturenofocus>scroll-up-2.png</texturenofocus>
+<posy>9</posy>
+<focusedcolor>white</focusedcolor>
+<onleft>36079</onleft>
+<font>font13</font>
+<onright>9000</onright>
+<ondown>36077</ondown>
+</control>
+</control>
+<control type="button" id="36077">
+<visible>false</visible>
+<description>hidden button to scroll down the list</description>
+</control>
+<control type="button" id="36088">
+<texturefocus>MenuItemFO.png</texturefocus>
+<width>750</width>
+<disabledcolor>grey3</disabledcolor>
+<visible>StringCompare(Skin.String(spincontrol36080),Custom)</visible>
+<visible>Stringcompare(Window.Property(advancedmode),1)</visible>
+<label> -Arm</label>
+<height>90</height>
+<pulseonselect>false</pulseonselect>
+<enable>false</enable>
+<textcolor>grey2</textcolor>
+<texturenofocus>MenuItemNF.png</texturenofocus>
+<focusedcolor>white</focusedcolor>
+<font>font15</font>
+</control>
+<control type="button" id="36089">
+<texturefocus>MenuItemFO.png</texturefocus>
+<width>750</width>
+<disabledcolor>grey3</disabledcolor>
+<visible>StringCompare(Skin.String(spincontrol36080),Custom)</visible>
+<visible>Stringcompare(Window.Property(advancedmode),1)</visible>
+<label> -Core</label>
+<height>90</height>
+<pulseonselect>false</pulseonselect>
+<enable>false</enable>
+<textcolor>grey2</textcolor>
+<texturenofocus>MenuItemNF.png</texturenofocus>
+<focusedcolor>white</focusedcolor>
+<font>font15</font>
+</control>
+<control type="button" id="36090">
+<texturefocus>MenuItemFO.png</texturefocus>
+<width>750</width>
+<disabledcolor>grey3</disabledcolor>
+<visible>StringCompare(Skin.String(spincontrol36080),Custom)</visible>
+<visible>Stringcompare(Window.Property(advancedmode),1)</visible>
+<label> -SDram</label>
+<height>90</height>
+<pulseonselect>false</pulseonselect>
+<enable>false</enable>
+<textcolor>grey2</textcolor>
+<texturenofocus>MenuItemNF.png</texturenofocus>
+<focusedcolor>white</focusedcolor>
+<font>font15</font>
+</control>
+<control type="button" id="36091">
+<texturefocus>MenuItemFO.png</texturefocus>
+<width>750</width>
+<disabledcolor>grey3</disabledcolor>
+<visible>StringCompare(Skin.String(spincontrol36080),Custom)</visible>
+<visible>Stringcompare(Window.Property(advancedmode),1)</visible>
+<label> -Overvoltage</label>
+<height>40</height>
+<pulseonselect>false</pulseonselect>
+<enable>false</enable>
+<textcolor>grey2</textcolor>
+<texturenofocus>MenuItemNF.png</texturenofocus>
+<focusedcolor>white</focusedcolor>
+<font>font15</font>
+</control>
+<control type="label" id="36093">
+<textcolor>blue</textcolor>
+<width>750</width>
+<align>left</align>
+<aligny>center</aligny>
+<label>Accounts</label>
+<height>45</height>
+<visible>Stringcompare(Window.Property(advancedmode),1)</visible>
+<shadowcolor>black</shadowcolor>
+<font>font13_title</font>
+</control>
+<control type="button" id="36094">
+<texturefocus>MenuItemFO.png</texturefocus>
+<width>750</width>
+<disabledcolor>grey3</disabledcolor>
+<visible>Stringcompare(Window.Property(advancedmode),1)</visible>
+<label>Root password</label>
+<height>40</height>
+<pulseonselect>false</pulseonselect>
+<enable>false</enable>
+<textcolor>grey2</textcolor>
+<texturenofocus>MenuItemNF.png</texturenofocus>
+<focusedcolor>white</focusedcolor>
+<font>font13</font>
+</control>
+<control type="button" id="36095">
+<texturefocus>MenuItemFO.png</texturefocus>
+<width>750</width>
+<disabledcolor>grey3</disabledcolor>
+<visible>Stringcompare(Window.Property(advancedmode),1)</visible>
+<label>XBian password</label>
+<height>40</height>
+<pulseonselect>false</pulseonselect>
+<enable>false</enable>
+<textcolor>grey2</textcolor>
+<texturenofocus>MenuItemNF.png</texturenofocus>
+<focusedcolor>white</focusedcolor>
+<font>font13</font>
+</control>
+<control type="radiobutton" id="36096">
+<texturefocus>MenuItemFO.png</texturefocus>
+<width>750</width>
+<disabledcolor>grey3</disabledcolor>
+<visible>Stringcompare(Window.Property(advancedmode),1)</visible>
+<label>SSH root login</label>
+<height>40</height>
+<pulseonselect>false</pulseonselect>
+<enable>false</enable>
+<textcolor>grey2</textcolor>
+<texturenofocus>MenuItemNF.png</texturenofocus>
+<focusedcolor>white</focusedcolor>
+<font>font13</font>
+</control>
+<control type="label" id="36055">
+<textcolor>blue</textcolor>
+<width>750</width>
+<align>left</align>
+<aligny>center</aligny>
+<label>Connectivity</label>
+<height>45</height>
+<visible>Stringcompare(Window.Property(advancedmode),1)</visible>
+<shadowcolor>black</shadowcolor>
+<font>font13_title</font>
+</control>
+<control type="radiobutton" id="36057">
+<texturefocus>MenuItemFO.png</texturefocus>
+<width>750</width>
+<disabledcolor>grey3</disabledcolor>
+<visible>Stringcompare(Window.Property(advancedmode),1)</visible>
+<label>Force HDMI output when no tv is identified</label>
+<height>40</height>
+<pulseonselect>false</pulseonselect>
+<enable>false</enable>
+<textcolor>grey2</textcolor>
+<texturenofocus>MenuItemNF.png</texturenofocus>
+<focusedcolor>white</focusedcolor>
+<font>font13</font>
+</control>
+<control type="radiobutton" id="36058">
+<texturefocus>MenuItemFO.png</texturefocus>
+<width>750</width>
+<disabledcolor>grey3</disabledcolor>
+<visible>Stringcompare(Window.Property(advancedmode),1)</visible>
+<label>Ignore HDMI output even if a tv is connected</label>
+<height>40</height>
+<pulseonselect>false</pulseonselect>
+<enable>false</enable>
+<textcolor>grey2</textcolor>
+<texturenofocus>MenuItemNF.png</texturenofocus>
+<focusedcolor>white</focusedcolor>
+<font>font13</font>
+</control>
+<control type="radiobutton" id="36059">
+<texturefocus>MenuItemFO.png</texturefocus>
+<width>750</width>
+<disabledcolor>grey3</disabledcolor>
+<visible>Stringcompare(Window.Property(advancedmode),1)</visible>
+<label>Ignore CEC init, preventing wakeup of tv at reboot</label>
+<height>40</height>
+<pulseonselect>false</pulseonselect>
+<enable>false</enable>
+<textcolor>grey2</textcolor>
+<texturenofocus>MenuItemNF.png</texturenofocus>
+<focusedcolor>white</focusedcolor>
+<font>font13</font>
+</control>
+<control type="radiobutton" id="36060">
+<texturefocus>MenuItemFO.png</texturefocus>
+<width>750</width>
+<disabledcolor>grey3</disabledcolor>
+<visible>Stringcompare(Window.Property(advancedmode),1)</visible>
+<label>Disable CEC</label>
+<height>40</height>
+<pulseonselect>false</pulseonselect>
+<enable>false</enable>
+<textcolor>grey2</textcolor>
+<texturenofocus>MenuItemNF.png</texturenofocus>
+<focusedcolor>white</focusedcolor>
+<font>font13</font>
+</control>
+<control type="radiobutton" id="36061">
+<texturefocus>MenuItemFO.png</texturefocus>
+<width>750</width>
+<disabledcolor>grey3</disabledcolor>
+<visible>Stringcompare(Window.Property(advancedmode),1)</visible>
+<label>Disable overscan</label>
+<height>40</height>
+<pulseonselect>false</pulseonselect>
+<enable>false</enable>
+<textcolor>grey2</textcolor>
+<texturenofocus>MenuItemNF.png</texturenofocus>
+<focusedcolor>white</focusedcolor>
+<font>font13</font>
+</control>
+<control type="radiobutton" id="36062">
+<texturefocus>MenuItemFO.png</texturefocus>
+<width>750</width>
+<disabledcolor>grey3</disabledcolor>
+<visible>Stringcompare(Window.Property(advancedmode),1)</visible>
+<label>Disable the 'rainbow' screen at really start of RPI</label>
+<height>40</height>
+<pulseonselect>false</pulseonselect>
+<enable>false</enable>
+<textcolor>grey2</textcolor>
+<texturenofocus>MenuItemNF.png</texturenofocus>
+<focusedcolor>white</focusedcolor>
+<font>font13</font>
+</control>
+</control>
+			</control>
+		</control>
+	</controls>
+</window>
